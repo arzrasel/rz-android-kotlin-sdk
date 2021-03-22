@@ -34,7 +34,8 @@ abstract class DoubleClickListener: GestureDetector.SimpleOnGestureListener() {
     //
     companion object {
         @SuppressLint("ClickableViewAccessibility")
-        fun setListener(context: Context, view: View, onClickListener: OnClickListener) {
+        @JvmStatic
+        fun setEventListener(context: Context, view: View, onClickListener: OnClickListener) {
             val doubleClickListener = object: DoubleClickListener() {
                 override fun onSingleClick(event: MotionEvent?) {
                     onClickListener.let {
